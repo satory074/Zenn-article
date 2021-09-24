@@ -1,0 +1,33 @@
+@startuml
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v10.0/dist
+!includeurl AWSPuml/AWSCommon.puml
+
+!includeurl AWSPuml/AWSSimplified.puml
+
+!includeurl AWSPuml/DeveloperTools/CodePipeline.puml
+!includeurl AWSPuml/DeveloperTools/CodeDeploy.puml
+!includeurl AWSPuml/Compute/Lightsail.puml
+
+
+rectangle PC[
+    <img:../images/PlantUML/pc.png>
+    Local PC
+]
+
+rectangle GitHub[
+    <img:../images/PlantUML/github.png>
+    GitHub
+]
+
+frame AWS {
+    CodePipeline(CodePipeline, "CodePipeline", "Technology")
+    CodeDeploy(CodeDeploy, "CodeDeploy", "Technology")
+    Lightsail(Lightsail, "Lightsail", "Technology")
+}
+
+PC -Right-> GitHub: ソースコードを\nPush
+
+CodePipeline -Left-> GitHub: ソースコードの\n変更を検知
+CodePipeline -Right-> CodeDeploy: CodeDeploy経由で\nデプロイ
+CodeDeploy -Right-> Lightsail: デプロイ
+@enduml
