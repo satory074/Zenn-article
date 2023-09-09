@@ -1,0 +1,10 @@
+title: "インスタントレシピ集(Google Apps Script, IFTTTなど)"
+summary: "Google Apps Script(GAS)やIFTTTなどで作成したコードや構成を簡単にまとめました。適宜更新・追加をします。自分用としてZennのBookでまとめましたが、どなたかのインスピレーションや一助になれば幸いです。"
+topics: ["GAS", "IFTTT"]
+published: false
+price: 0 # 有料の場合200〜5000
+toc_depth: 1
+# 本に含めるチャプターを順番に並べましょう
+chapters:
+    - gas
+    - ifttt
